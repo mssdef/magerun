@@ -4,6 +4,8 @@
  * CLI run: php bin/magerun.php "YourVendor\YourModule\Stock\Import"
 **/
 use Magento\Framework\App\Bootstrap;
+use Magento\Framework\App\State;
+
 require __DIR__ . '/../app/bootstrap.php';
 
 if (!isset($argv[1])) {
@@ -15,6 +17,11 @@ if (!isset($argv[1])) {
 $bootstrap = Bootstrap::create(BP, $_SERVER);
 $obj = $bootstrap->getObjectManager();
 
+// Set the area code
+$state = $obj->get(State::class);
+$state->setAreaCode('crontab'); // Replace 'frontend' with the desired area code
+
 $cron = $obj->create(CRONJOBCLASS);
+var_dump(get_class($cron));
 
 $cron->execute();
