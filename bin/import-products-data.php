@@ -1,4 +1,7 @@
 <?php
+## Run:
+## nohup php bin/product-imports-spec-plat.php > output.log 2>&1 &
+
 use Magento\Framework\App\Bootstrap;
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Catalog\Api\Data\ProductInterface;
