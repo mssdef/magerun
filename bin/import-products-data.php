@@ -14,7 +14,7 @@ $objectManager = $bootstrap->getObjectManager();
 $state = $objectManager->get('Magento\Framework\App\State');
 $state->setAreaCode('frontend');
 
-// Set the CSV file path
+// Set the CSV file path 
 $csvFilePath = 'bin/csv/lagerliste-bouw.csv';
 
 // Set the store view ID
