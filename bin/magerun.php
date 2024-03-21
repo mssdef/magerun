@@ -2,6 +2,7 @@
 
 /**
  * CLI run: php bin/magerun.php "YourVendor\YourModule\Stock\Import"
+ * CLI run: php bin/magerun.php "Phoenix\TradebyteConnector\VirtualType\Product\Export" downloadStockFeed
 **/
 use Magento\Framework\App\Bootstrap;
 use Magento\Framework\App\State;
@@ -25,4 +26,4 @@ if (!isset($argv[1])) {
 $cron = $obj->create(CRONJOBCLASS);
 var_dump(get_class($cron));
 
-$cron->execute();
+$cron->{(isset($argv[2]) ? $argv[2] : 'execute')}();
