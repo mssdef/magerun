@@ -2,7 +2,7 @@
 
 /**
  * CLI run: php bin/magerun.php "YourVendor\YourModule\Stock\Import"
- * CLI run: php bin/magerun.php "Phoenix\TradebyteConnector\VirtualType\Product\Export" downloadStockFeed
+ * CLI run: php bin/magerun.php "YourVendor\YourModule\VirtualType\Product\Export" downloadStockFeed
 **/
 use Magento\Framework\App\Bootstrap;
 use Magento\Framework\App\State;
