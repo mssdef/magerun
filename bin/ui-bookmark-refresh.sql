@@ -1,1 +1,1 @@
-truncated ui_bookmark;
+truncate ui_bookmark;
