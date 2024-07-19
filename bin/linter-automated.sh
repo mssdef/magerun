@@ -1,4 +1,4 @@
-#bin/composer req phpstan/phpstan squizlabs/php_codesniffer magento/magento-coding-standard phpmd/phpmd
+#bin/composer req phpstan/phpstan squizlabs/php_codesniffer magento/magento-coding-standard
 
 git pull origin develop
 git branch
@@ -7,8 +7,7 @@ git status
 # partially run phpstan
 export CMDTEST="bin/test_run.loc.sh"
 
-git log --name-only |egrep '\.php'|grep -v 'app/etc/config.php'|head -n5|tail -r|awk '{ print "[ -f "$1" ] && (echo "$1"; php vendor/bin/phpmd "$1" ansi .//dev/tests/static/testsuite/Magento/Test/Php/_files/phpmd/ruleset.xml; php vendor/bin/phpcs --standard=Magento2  "$1"; php vendor/bin/phpstan analyse --level=3 "$1";)" }' > $CMDTEST; 
-chmod 755 $CMDTEST
+git log --name-only |egrep '\.php'|grep -v 'app/etc/config.php'|head -n5|tail -r|awk '{ print "[ -f "$1" ] && (echo "$1"; php vendor/bin/phpmd "$1" ansi .//dev/tests/static/testsuite/Magento/Test/Php/_files/phpmd/ruleset.xml; php vendor/bin/phpcs --standard=Magento2  "$1"; php vendor/bin/phpstan analyse --level=4 "$1";)" }' > $CMDTEST; chmod 755 $CMDTEST
 $CMDTEST
 
 
