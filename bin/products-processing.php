@@ -15,6 +15,7 @@ $objectManager->get('Magento\Framework\App\State')->setAreaCode($areaCode);
 $productRepository = $objectManager->create('Magento\Catalog\Api\ProductRepositoryInterface');
 $productCollectionFactory = $objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
 $productCollection = $productCollectionFactory->create();
+$productCollection->setStoreId(1); 
 $productCollection->addAttributeToFilter('name', ['like' => '%FORTIS%']);
 
 $n = 0;
