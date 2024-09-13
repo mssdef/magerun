@@ -13,6 +13,7 @@ $bootstrap = Bootstrap::create(BP, $_SERVER);
 $obj = $bootstrap->getObjectManager();
 
 // Set the area code
+// AREA_FRONTEND
 $state = $obj->get(State::class);
 $state->setAreaCode('crontab'); // Replace 'frontend' with the desired area code
 
