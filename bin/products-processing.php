@@ -8,6 +8,7 @@ $bootstrap = Bootstrap::create(BP, $_SERVER);
 $objectManager = $bootstrap->getObjectManager();
 
 // Set the area code to the adminhtml area
+// AREA_FRONTEND
 $areaCode = Area::AREA_ADMINHTML;
 $objectManager->get('Magento\Framework\App\State')->setAreaCode($areaCode);
 
