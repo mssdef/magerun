@@ -12,14 +12,16 @@ $obj = $bootstrap->getObjectManager();
 
 // Set the area code
 $obj->get(\Magento\Framework\App\State::class)->setAreaCode('adminhtml');
-
-//$orderId = 87;
-$orderId = 52;
 $orderRepository = $obj->create(Magento\Sales\Api\OrderRepositoryInterface::class);
 
 /**
  * @var $order Magento\Sales\Model\Order
  */
+
+
+//$orderId = 87;
+$orderId = 52;
+
 $order = $orderRepository->get($orderId);
 $order->setTotalsCollectedFlag(false);
 //$order->setTotalRefunded(59.89);
